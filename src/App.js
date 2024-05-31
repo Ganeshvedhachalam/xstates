@@ -85,7 +85,7 @@ function App() {
         </select>
       </div>
       {selectcity && (
-        <h2>You Selected {selectcity}, {selectstate}, {selectcountry}</h2>
+        <h2>You selected {selectcity}, {selectstate}, {selectcountry}</h2>
       )}
     </div>
   );
