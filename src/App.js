@@ -57,20 +57,20 @@ function App() {
         {countries.map((country)=><option>{country}</option>)}
       </select> 
 
-      <select value={selectstates}  onChange={handlestate}>
-      <option value="" disabled>Select states</option>
+      <select value={selectstates}  onChange={handlestate} disabled={!selectcountry}>
+      <option value="" disabled>Select state</option>
       {cstates.map((state) => (
             <option key={state} value={state}>{state}</option>
           ))}
       </select> 
 
-      <select value={selectcity}  onChange={handlecity}>
+      <select value={selectcity}  onChange={handlecity}  disabled={!selectcountry || !selectstates}>
         <option value="" disabled>Select City</option>
         {city.map((cit)=> (<option key={cit} value={cit}>{cit}</option>))}
       </select>
     </div>
     {selectcity && (
-        <h2>You Selected City: {selectcity}, State: {selectstates}, Country: {selectcountry}</h2>
+        <h2>You Selected {selectcity}, {selectstates}, {selectcountry}</h2>
       )}
      
     </div>
